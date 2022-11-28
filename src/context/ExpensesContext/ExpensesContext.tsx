@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { IExpense } from "../../types/types";
 import { IExpenseContext, IExpensesContextProviderProps } from "./types";
 
 export const ExpensesContext = createContext<IExpenseContext>({} as IExpenseContext);
@@ -7,16 +8,16 @@ const useExpensesContextValue = () => {
   const [expensesContext, setExpensesContext] = useState<IExpenseContext>(() => ({
     expenses: [],
 
-    setNewExpense: (newExpenses) => {
+    setNewExpense: (expense: IExpense) => {
       setExpensesContext((ctx) => ({
         ...ctx,
-        expenses: [...ctx.expenses, newExpenses],
+        expenses: [...ctx.expenses, expense],
       }));
     },
     deleteExpense: (id) => {
       setExpensesContext((ctx) => ({
         ...ctx,
-        expenses: [...ctx.expenses].filter((exp) => exp.id !== id),
+        expenses: [...ctx.expenses].filter((expense) => expense.id !== id),
       }));
     },
 

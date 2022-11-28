@@ -12,7 +12,6 @@ export const StyledRemainingCard = styled.div`
   padding: 30px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-weight: 500;
   font-size: 20px;
 `;

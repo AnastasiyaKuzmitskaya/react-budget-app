@@ -6,8 +6,7 @@ export interface IOption {
 }
 
 export interface IExpense {
-  name: any;
   id: string;
-  title: string;
-  cost: number;
+  name: string;
+  price: number;
 }

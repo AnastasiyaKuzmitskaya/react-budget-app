@@ -2,10 +2,9 @@ import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
 import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 import { StyledRemainingCard } from "./styles";
 
-
-export const  RemainingCard = () => {
-	const { currentCurrency } = useCurrencyContext();
-	const { remaining  } = useBudgetContext();
+export const RemainingCard = () => {
+  const { currentCurrency } = useCurrencyContext();
+  const { remaining } = useBudgetContext();
 
   if (remaining < 0) {
     return (
@@ -17,10 +16,8 @@ export const  RemainingCard = () => {
   }
   return (
     <StyledRemainingCard>
-      Remaining {currentCurrency.value}:{remaining}{" "}
+      Remaining: {currentCurrency.value}
+      {remaining}{" "}
     </StyledRemainingCard>
   );
 };
-
-
-

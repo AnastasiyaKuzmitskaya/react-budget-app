@@ -2,13 +2,13 @@ import { ReactNode } from "react";
 import { IExpense } from "../../types/types";
 
 export interface IExpensesContextProviderProps {
-    children: ReactNode;
-  }
+  children: ReactNode;
+};
 
-
-  export interface IExpenseContext{
-    expenses: IExpense[];
-    setNewExpense: (expenses: IExpense) => void;
-    deleteExpense:(id:string) =>void;
-    searchExpense: (title: string) => void;
-  }
+export interface IExpenseContext {
+  expenses: IExpense[] | [];
+  searchValue: string;
+  setNewExpense: (expense: IExpense) => void;
+  deleteExpense: (id: string) => void;
+  searchExpense: (title: string) => void;
+};

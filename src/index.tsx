@@ -8,19 +8,15 @@ import { ExpensesContextProvider } from "./context/ExpensesContext/ExpensesConte
 
 import { GlobalStyle } from "./GlobalStyle";
 
-const providers = [BudgetContextProvider, CurrencyContextProvider,  ExpensesContextProvider];
+const providers = [BudgetContextProvider, CurrencyContextProvider, ExpensesContextProvider];
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-  
-      <React.StrictMode>
-    <GlobalStyle/>
+  <React.StrictMode>
+    <GlobalStyle />
     <AppContextProvider components={providers}>
       <App />
-      </AppContextProvider>
-
-  </React.StrictMode>
-  
-
+    </AppContextProvider>
+  </React.StrictMode>,
 );

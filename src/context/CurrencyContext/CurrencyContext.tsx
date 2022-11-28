@@ -1,12 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import { Currency } from "../../config/currency";
 import { IOption } from "../../types/types";
-import {ICurrencyContextProviderProps, ICurrencyContex } from "./types";
+import { ICurrencyContextProviderProps, ICurrencyContex } from "./types";
 
 const CurrencyContext = createContext<ICurrencyContex>({} as ICurrencyContex);
 
 const useCurrencyContextValue = () => {
-  const [currencyContext, setCurrencyContext] = useState<ICurrencyContex> ({
+  const [currencyContext, setCurrencyContext] = useState<ICurrencyContex>({
     currentCurrency: { value: Currency.USD, label: "USD" },
     currencies: [
       { value: Currency.USD, label: "USD" },
@@ -20,7 +20,7 @@ const useCurrencyContextValue = () => {
         currentCurrency,
       }));
     },
-  })
+  });
   return currencyContext;
 };
 
