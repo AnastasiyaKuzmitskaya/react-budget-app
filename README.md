@@ -4,4 +4,4 @@ https://anastasiyakuzmitskaya.github.io/react-budget-app /
 •Далее npm run deploy
 
 
-npm run lint
+npm run lint-проверка на ошибки 
