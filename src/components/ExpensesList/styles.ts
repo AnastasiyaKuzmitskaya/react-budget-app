@@ -6,7 +6,7 @@ export const StyledList = styled.ul`
   list-style: none;
 `;
 
-export const OppsError = styled.p`
+export const SeachError = styled.p`
   font-weight: 400;
   font-size: 20px;
   text-align: center;

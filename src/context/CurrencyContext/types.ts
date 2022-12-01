@@ -10,3 +10,8 @@ export interface ICurrencyContex {
   setCurrency: (currency: IOption) => void;
   currencies: IOption[];
 }
+
+import { useCurrencyContext } from "./CurrencyContext";
+import { CurrencyContextProvider } from "./CurrencyContext";
+
+export { useCurrencyContext, CurrencyContextProvider };

@@ -10,7 +10,7 @@ export const Budget = () => {
     <>
       <StyledBudget>
         <BudgetHeader>
-          <Title label="Budget App" />
+          <Title label={"Budget App"} />
           <CustomSelect />
         </BudgetHeader>
         <BudgetCard />

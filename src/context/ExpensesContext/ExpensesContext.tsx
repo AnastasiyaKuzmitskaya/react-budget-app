@@ -14,18 +14,10 @@ const useExpensesContextValue = () => {
         expenses: [...ctx.expenses, expense],
       }));
     },
-    deleteExpense: (id) => {
+    deleteExpense: (id: string) => {
       setExpensesContext((ctx) => ({
         ...ctx,
         expenses: [...ctx.expenses].filter((expense) => expense.id !== id),
-      }));
-    },
-
-    searchValue: "",
-    searchExpense: (name) => {
-      setExpensesContext((ctx) => ({
-        ...ctx,
-        searchValue: name.toLowerCase(),
       }));
     },
   }));

@@ -1,3 +1,5 @@
+import { SubmitStyled } from "./styles";
+
 export const Submit = () => {
-  return <div>Submit</div>;
+  return <SubmitStyled type="submit">Done</SubmitStyled>;
 };

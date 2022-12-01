@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
-import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
-import { useDebounce } from "../../hooks/useDebounce";
-import { useInput } from "../../hooks/useInput";
-import { useToogle } from "../../hooks/useToogle";
+import { useBudgetContext, useCurrencyContext } from "../../context";
+
+import { useDebounce, useInput, useToogle } from "../../hooks";
+
 import { Button, Input, StyledBudgetCart, SubTitle } from "./styles";
 
 export const BudgetCard = () => {
   const budgetInput = useInput();
-  const { setBudget, budget, setRemaining } = useBudgetContext();
+  const { setBudget, budget } = useBudgetContext();
   const { currentCurrency } = useCurrencyContext();
 
   const [isActive, toogleIsActive] = useToogle(false);
   const [isDisableSave, setDisableSave] = useState<boolean>(true);
   const handleSave = () => {
     setBudget(+budgetInput.value);
-    setRemaining();
     toogleIsActive();
   };
   const handleEdit = () => toogleIsActive();

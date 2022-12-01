@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledExpensesListItem = styled.li`
+export const StyledExpensesItem = styled.li`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1.1fr 0.2fr 0.1fr;
@@ -9,13 +9,13 @@ export const StyledExpensesListItem = styled.li`
   border-bottom: 2px solid #ccd5ff;
 `;
 
-export const StyledExpensesItemText = styled.p`
+export const ExpensesItemText = styled.p`
   text-transform: lowercase;
   font-weight: 400;
   font-size: 16px;
 `;
 
-export const StyledExpensesItemBadge = styled.span`
+export const ExpensesItemBadge = styled.span`
   justify-self: center;
   border-radius: 10px;
   padding: 3px 10px;
@@ -24,7 +24,7 @@ export const StyledExpensesItemBadge = styled.span`
   color: #fff;
 `;
 
-export const StyledDeleteButton = styled.span`
+export const DeleteButton = styled.span`
   justify-self: center;
   padding: 0;
   background: none;

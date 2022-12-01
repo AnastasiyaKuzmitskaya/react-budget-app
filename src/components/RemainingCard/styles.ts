@@ -1,17 +1,21 @@
 import styled from "styled-components";
 
 interface IProps {
-  error?: boolean;
+  $isOverSpending?: boolean;
 }
 
 export const StyledRemainingCard = styled.div`
-  background-color: ${(props: IProps) => (props.error ? "#FF0000 " : "#CCD5FF")};
-  color: ${(props: IProps) => (props.error ? "#FFF" : "#000000")};
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 30px 20px;
   display: flex;
   align-items: center;
-  font-weight: 500;
-  font-size: 20px;
+  justify-content: space-between;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: ${(props: IProps) => (props.$isOverSpending ? "#FF0000" : "#CCD5FF")};
+`;
+
+export const Title = styled.p`
+  color: ${(props: IProps) => (props.$isOverSpending ? "#FFF" : "000000")};
+  font-weight: ${({ $isOverSpending }) => ($isOverSpending ? "700" : "500")};
+  font-size: 24px;
 `;

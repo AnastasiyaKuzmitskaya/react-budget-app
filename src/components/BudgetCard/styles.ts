@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledBudgetCart = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #7cc6fe;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -11,7 +12,8 @@ export const StyledBudgetCart = styled.div`
 
 export const Input = styled.input`
   border: none;
-  background: none;
+  background: transparent;
+  outline: none;
   color: #000000;
   font-size: 20px;
   font-weight: 500;

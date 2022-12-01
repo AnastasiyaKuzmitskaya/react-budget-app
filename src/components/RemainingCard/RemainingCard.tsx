@@ -1,23 +1,21 @@
-import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
-import { StyledRemainingCard } from "./styles";
+import { useBudgetContext, useCurrencyContext, useExpensesContext } from "../../context";
+import { StyledRemainingCard, Title } from "./styles";
 
 export const RemainingCard = () => {
   const { currentCurrency } = useCurrencyContext();
-  const { remaining } = useBudgetContext();
+  const { expenses } = useExpensesContext();
+  const { budget } = useBudgetContext();
 
-  if (remaining < 0) {
-    return (
-      <StyledRemainingCard error>
-        Overspending by {currentCurrency.value}
-        {Math.abs(remaining)}
-      </StyledRemainingCard>
-    );
-  }
+  const remaining = budget - expenses.reduce((total, { price }) => total + price, 0);
+
+  const isOverSpending = remaining < 0;
   return (
-    <StyledRemainingCard>
-      Remaining: {currentCurrency.value}
-      {remaining}{" "}
+    <StyledRemainingCard $isOverSpending={isOverSpending}>
+      <Title $isOverSpending={isOverSpending}>
+        {isOverSpending
+          ? `Overspending by ${currentCurrency.value}${Math.abs(remaining)}`
+          : `Remaining: ${currentCurrency.value}${remaining}`}
+      </Title>
     </StyledRemainingCard>
   );
 };

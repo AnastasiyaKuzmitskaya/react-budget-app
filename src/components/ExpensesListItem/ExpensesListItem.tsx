@@ -1,11 +1,6 @@
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import {
-  StyledDeleteButton,
-  StyledExpensesItemBadge,
-  StyledExpensesItemText,
-  StyledExpensesListItem,
-} from "./styles";
+import { useCurrencyContext, useExpensesContext } from "../../context";
+
+import { ExpensesItemBadge, ExpensesItemText, StyledExpensesItem, DeleteButton } from "./styles";
 
 interface IProps {
   name: string;
@@ -20,13 +15,13 @@ export const ExpensesListItem = ({ name, price, id }: IProps) => {
     deleteExpense(id);
   };
   return (
-    <StyledExpensesListItem>
-      <StyledExpensesItemText>{name}</StyledExpensesItemText>
-      <StyledExpensesItemBadge>
+    <StyledExpensesItem>
+      <ExpensesItemText>{name}</ExpensesItemText>
+      <ExpensesItemBadge>
         {currentCurrency.value}
         {price}
-      </StyledExpensesItemBadge>
-      <StyledDeleteButton onClick={handleDelete} />
-    </StyledExpensesListItem>
+      </ExpensesItemBadge>
+      <DeleteButton onClick={handleDelete} />
+    </StyledExpensesItem>
   );
 };
